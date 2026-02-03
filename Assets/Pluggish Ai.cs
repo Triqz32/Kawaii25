@@ -32,7 +32,7 @@ public class PluggishAi : MonoBehaviour
         string svar = "";
 
 
-        content += "\nPluggish AI: " + svar;
+        content += "\nPluggish AI: " + svar;// vi måste lägga till mer code för att göra der unique
     }
     
     
