@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -5,7 +6,11 @@ public class PluggishAi : MonoBehaviour
 {
     [SerializeField] TMP_Text chatlog;
     [SerializeField] TMP_InputField input;
-
+    [SerializeField] TMP_InputField inputName;
+    [SerializeField] TMP_InputField Inputlist;
+    public int Currentlist = 0;// Fuad: Det här är det nya listan som blir gjort
+    //public string Question;
+    public List<Question> Questions;
     string content = "Pluggish Ai";// Elias: le text som kommer upp via chat arean
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -19,11 +24,26 @@ public class PluggishAi : MonoBehaviour
         chatlog.text = content;//Elias: det som gör string content funka
     }
 
+    public void Makenewlist()
+    {
+        Question newQuestion = new Question();//Fuad: Coden gör en lista
+        newQuestion.personName = inputName.text;//Fuad: När man skriver sitt namn står det.
+        newQuestion.newList= new List<string>();//Fuad: Man kan göra nya frågor
+        Questions.Add(newQuestion);
+    }
+
+    public void showlist()
+    {
+
+    }
+
     public void Send()
     {
         content += "\nDu: " + input.text;// Elias: gör en ny rad och lägger till Du: och sedan vad du har skrivit i input fielden.
         Responce(input.text);// Elias: gör så att messagen går till coden nedan som behöver en message för att den ska funka.
         input.text = "";//Elias: Tar bord vad du har skrivit i unput Fielden.
+
+        
     }
     
     void Responce(string msg)// Elias: behöver en message för att den ska funka
@@ -34,6 +54,8 @@ public class PluggishAi : MonoBehaviour
 
         content += "\nPluggish AI: " + svar;// vi måste lägga till mer code för att göra der unique
     }
+    
+
     
     
 }
