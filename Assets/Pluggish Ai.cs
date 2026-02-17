@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using TMPro;
 using UnityEngine;
 
@@ -50,13 +51,22 @@ public class PluggishAi : MonoBehaviour
     {
         msg= msg.ToLower();//Elias: gör allt man har skrivit bli till små bokstäver
         string svar = "";
-        if (msg == "yo")
+        Match match = Regex.Match(msg, "yo|hallå|hej|ursäkta|hjälp|halloj");
+        if (match.Success)
+        {
+            svar = "Hej, vilket ämne vill du ha hjälp med vi har matte och Samhällskunskap";
+        }
+        match = Regex.Match(msg,"");
+        /*if (msg == "yo" || msg == "hej" || msg == "hallå" )// || detta kan säga som ELLER så det är yo ELLER hej ELELR osv
         {
             svar = "Hej, vilket ämne vill du ha hjälp med vi har Matte och Samhällskunskap.";
-        }
+        }*/
 
 
-        content += "\nPluggish AI: " + svar;// vi måste lägga till mer code för att göra der unique
+
+
+
+        content += "\nPluggish AI: " + svar;// vi måste lägga till mer code för att göra den unique
     }
     
 
