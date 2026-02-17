@@ -50,6 +50,10 @@ public class PluggishAi : MonoBehaviour
     {
         msg= msg.ToLower();//Elias: gör allt man har skrivit bli till små bokstäver
         string svar = "";
+        if (msg == "yo")
+        {
+            svar = "Hej, vilket ämne vill du ha hjälp med vi har Matte och Samhällskunskap.";
+        }
 
 
         content += "\nPluggish AI: " + svar;// vi måste lägga till mer code för att göra der unique
