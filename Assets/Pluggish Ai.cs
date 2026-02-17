@@ -47,26 +47,39 @@ public class PluggishAi : MonoBehaviour
         
     }
     
-    void Responce(string msg)// Elias: behöver en message för att den ska funka
+    void Responce(string msg)// Elias: behöver en message för att den ska funka ALLT under detta är gjord av Elias
     {
         msg= msg.ToLower();//Elias: gör allt man har skrivit bli till små bokstäver
         string svar = "";
-        Match match = Regex.Match(msg, "yo|hallå|hej|ursäkta|hjälp|halloj");
+        Match match = Regex.Match(msg, "yo|hallå|hej|ursäkta|hjälp|halloj");// gjord av ELias
         if (match.Success)
         {
-            svar = "Hej, vilket ämne vill du ha hjälp med vi har matte och Samhällskunskap";
+            svar = "Hej, vilket ämne vill du ha hjälp med vi har matte och Samhällskunskap";// av Elias
         }
-        match = Regex.Match(msg,"");
+        match = Regex.Match(msg,"matte");// lägg till fårgot och stöd om man säger te.x hjälp mig med denna frågan sen förklarar man vad det står på frågan och vi ger de hints och sist svaren Av Elias
+        if (match.Success)
+        {
+            svar = "Okej säg math start och vilket del av matten du vill för att börja";// av Elias
+        }
+        match = Regex.Match(msg, "math start algebra");// Av Elias
+        int rng = Random.Range(0, 100);// Av Elias
+        if (match.Success) {
+            if (rng == 0)
+            {
+                svar = "2x plus 3";
+            }
+            else if (rng == 1) { }// av Elias
+        }
         /*if (msg == "yo" || msg == "hej" || msg == "hallå" )// || detta kan säga som ELLER så det är yo ELLER hej ELELR osv
         {
             svar = "Hej, vilket ämne vill du ha hjälp med vi har Matte och Samhällskunskap.";
         }*/
+        // Av Elias
 
 
 
 
-
-        content += "\nPluggish AI: " + svar;// vi måste lägga till mer code för att göra den unique
+        content += "\nPluggish AI: " + svar;// vi måste lägga till mer code för att göra den unique Av Elias
     }
     
 
