@@ -10,7 +10,7 @@ public class PluggishAi : MonoBehaviour
     [SerializeField] TMP_InputField Inputlist;
     public int Currentlist = 0;// Fuad: Det här är det nya listan som blir gjort
     //public string Question;
-    public List<Question> Questions;
+  //  public List<Question> Questions;
     string content = "Pluggish Ai";// Elias: le text som kommer upp via chat arean
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -26,10 +26,10 @@ public class PluggishAi : MonoBehaviour
 
     public void Makenewlist()
     {
-        Question newQuestion = new Question();//Fuad: Coden gör en lista
+    /*    Question newQuestion = new Question();//Fuad: Coden gör en lista
         newQuestion.personName = inputName.text;//Fuad: När man skriver sitt namn står det.
         newQuestion.newList= new List<string>();//Fuad: Man kan göra nya frågor
-        Questions.Add(newQuestion);
+        Questions.Add(newQuestion);*/
     }
 
     public void showlist()
