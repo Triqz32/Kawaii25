@@ -56,7 +56,7 @@ public class PluggishAi : MonoBehaviour
         {
             svar = "Hej, vilket ämne vill du ha hjälp med vi har matte och Samhällskunskap";
         }
-        match = Regex.Match(msg);
+        match = Regex.Match(msg,"");
         /*if (msg == "yo" || msg == "hej" || msg == "hallå" )// || detta kan säga som ELLER så det är yo ELLER hej ELELR osv
         {
             svar = "Hej, vilket ämne vill du ha hjälp med vi har Matte och Samhällskunskap.";
@@ -66,7 +66,7 @@ public class PluggishAi : MonoBehaviour
 
 
 
-        content += "\nPluggish AI: " + svar;// vi måste lägga till mer code för att göra der unique
+        content += "\nPluggish AI: " + svar;// vi måste lägga till mer code för att göra den unique
     }
     
 
